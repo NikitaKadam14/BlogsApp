@@ -1,0 +1,70 @@
+.header {
+
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+.navbar {
+    color: white;
+    background-color: navy;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.login-icon {
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.middlesection {
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid gray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.blog-name {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 30px;
+}
+
+.login-button {
+    background-color: navy;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    padding: 10px;
+    margin-right: 20px;
+
+}
+
+.register-button {
+    background-color: navy;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 370px;
+}
+
+.copy-right {
+    background-color: #6e6e6e;
+
+}
