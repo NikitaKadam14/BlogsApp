@@ -1,0 +1,13 @@
+
+.blog-footer-section {
+    text-align: center;
+    position: fixed;
+    font-size:15px;
+    bottom: 0;
+    width: 100%; 
+    background-color:#ada7a7; 
+    padding: 2px 0px;
+}
+.footer-end-sectiom1{
+    padding: 0px 0px 40px;
+}

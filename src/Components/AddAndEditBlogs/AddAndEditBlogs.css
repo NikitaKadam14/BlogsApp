@@ -1,80 +1,53 @@
-.title-header{
-    font-size:20px;
-    font-weight: bold;
-    margin-left:40px;
-    
-}
-.title-section{
-    background-color: navy;
-    color: white;
-    display: flex;justify-content: space-between;
-    padding:10px;
-    align-items: center;
-}
-.title-name-section{
-    font-weight: bold;
-    font-size:13px;
-}
-.title-name{
-    margin-right:40px;
-    margin-left: 20px;
-
-}
-.title-name-logout{
-    margin-right:20px;
-    margin-left:40px;
-}
-.title-middle-section{
-    width:70%;
+.title-middle-section {
+    width: 70%;
     margin: auto;
-    margin-top:20px;
+    margin-top: 20px;
     background-color: white;
     border: 1px solid gray;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding:10px;
-    border-radius:7px;
+    padding: 10px;
+    border-radius: 7px;
 }
-.title-name-mid{
-    font-size:30px;
-    font-weight:bold;
+
+.title-name-mid {
+    padding: 10px;
+    width: 98%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 25px;
 }
-.title-description{
-    border: 1px solid gray;
+
+.text-description {
+    width:100%;
+    margin-top:10px;
+    padding-bottom:100px;
     border-radius:7px;
     
+}
+
+.title-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 8px;
+}
+
+.title-cancel-button {
+    margin-right: 10px;
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
 
 }
-.title-sapace{
-    margin-bottom:100px;
-    padding:10px;
-}
-.title-buttons{
-    margin-top:10px;
-    display: flex;justify-content: right;
-    margin-bottom:8px;
-}
-.title-cancel-button{
-    margin-right:10px;
+
+.title-save-button {
     background-color: navy;
-    color:white;
+    color: white;
     border: none;
-    padding:10px;
+    padding: 10px;
     border-radius: 7px;
-    
-}
-.title-save-button{
-    background-color: navy;
-    color:white;
-    border: none;
-    padding:10px;
-    border-radius: 7px;
-    
-}
-.end-copy{
-    text-align: center;
-    padding: 5px;
-    margin-top:286px;
-}
-.end-footer{
-    background-color: #6e6e6e;
+
 }

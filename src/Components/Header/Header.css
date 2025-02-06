@@ -1,0 +1,19 @@
+.blogs-navbar{
+    background-color: navy;
+    color:white;
+    display: flex;justify-content: space-between;
+    padding:10px;
+    align-items: center;
+}
+.blogs-heading{
+    margin-left:40px;
+    font-weight:bold;
+    font-size:25px;
+
+}
+.blogs-button{
+    margin-right:30px;
+    font-weight:bold;
+    
+
+}

@@ -9,22 +9,8 @@ function Dashboard() {
     const loginClick = () => {
         navigate("/login")
     }
-    const loginClick1 = () => {
-        navigate("/login")
-    }
-    const registerClick1 = () => {
-        navigate("/register")
-
-    }
     return (
         <div>
-            <div className="navbar">
-                <div className="header">Blogs</div>
-                <div>
-                    <span onClick={loginClick1} className="login-icon">Login</span>
-                    <span onClick={registerClick1} className="login-icon">Register</span>
-                </div>
-            </div>
             <div className="middlesection">
                 <div className="blog-name">Blogs !</div>
                 <div className="">Publish your passions,your way...</div>
@@ -34,11 +20,7 @@ function Dashboard() {
                     <button onClick={registerClick} className="register-button">Register</button>
                 </div>
             </div>
-            <div className="copy-right">
-                <div className="footer">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2022</div>
-            </div>
         </div>
-
     );
 }
 export default Dashboard;

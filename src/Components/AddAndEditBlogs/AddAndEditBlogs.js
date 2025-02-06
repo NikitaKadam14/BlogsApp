@@ -1,41 +1,48 @@
 import { useNavigate } from "react-router-dom";
 import "./AddAndEditBlogs.css"
+import { useState } from "react";
 function AddAndEditBlogs() {
-    const navigate=useNavigate();
-    const logoutClick=()=>{
+    const [addAndEditData, setAddAndEditData] = useState({
+        title: "",
+        description: "",
+    });
+    const navigate = useNavigate();
+    const handleCancelClick = () => {
+        console.log("Cancel click");
+        navigate(-1);
+    };
+    const handleSaveClick = () => {
+        console.log("Save click");
+        navigate("/blogsList");
+    };
+    const logoutClick = () => {
+        console.log("add and Edit Data:", addAndEditData);
         navigate("/login")
     }
-    const handledashboardClick=()=>{
-        navigate("/")
+    const handletitlechange = (event) => {
+        let addEditData = { ...addAndEditData }
+        addEditData.title = event.target.value;
+        setAddAndEditData(addEditData);
+    }
+    const handledescriptionchange = (event) => {
+        let addEditData = { ...addAndEditData }
+        addEditData.description = event.target.value;
+        setAddAndEditData(addEditData);
     }
     return (
         <div>
-            <div className="title-section">
-                <div onClick={handledashboardClick} className="title-header">Blogs</div>
-                <div className="title-name-section">
-                    <span className="title-name">Nikita Kadam</span>
-                    <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-                    <span onClick={logoutClick}className="title-name-logout">Logout</span>
-                </div>
-            </div>
             <div className="title-middle-section">
                 <div>
-                    <div className="title-name-mid">Title</div>
-                    <hr />
+                    <input className="title-name-mid" type="text" placeholder="Title" id="title" value={addAndEditData.title} onChange={handletitlechange} />
                 </div>
-                <div className="title-description">
-                    <div className="title-sapace">
-                        <div>Description</div>
-                    </div>
+                <div>
+                    <textarea className="text-description" id="description" value={addAndEditData.description} onChange={handledescriptionchange}>Description</textarea>
                 </div>
                 <div className="title-buttons">
-                    <button className="title-cancel-button">Cancel</button>
-                    <button className="title-save-button">Save</button>
+                    <button onClick={handleCancelClick} className="title-cancel-button">Cancel</button>
+                    <button onClick={handleSaveClick} className="title-save-button">Save</button>
                 </div>
 
-            </div>
-            <div className="end-footer">
-                <div><div className="end-copy">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2022</div></div>
             </div>
         </div>
 
