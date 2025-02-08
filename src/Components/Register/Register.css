@@ -29,7 +29,7 @@
     background-color: white;
 }
 
-.test-1 {
+.test-name {
     margin-top: 5px;
     width: 94%;
     border-radius: 7px;
@@ -43,12 +43,27 @@
     margin-bottom: 20px;
     width: 100%;
     background-color: navy;
+    color: white;
     padding: 10px;
     border-radius: 7px;
     border: none;
+    
+}
+.error {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    
+}.invalid-input {
+    border: 2px solid red;
+}
+/* Register.css */
+.Res-button:disabled {
+    opacity: 0.5; 
+    cursor: not-allowed; 
 }
 
-a {
-    color: white;
-}
+/* .valid-input {
+    border: 2px solid black;
+  } */
 

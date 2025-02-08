@@ -51,3 +51,15 @@
     border-radius: 7px;
 
 }
+.edit-error{
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+.invalid-input {
+    border: 2px solid red;
+}
+.title-save-button:disabled{
+    opacity:0.5;
+    cursor: not-allowed;
+}

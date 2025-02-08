@@ -31,7 +31,7 @@
     background-color: white;
 }
 
-.test-1 {
+.test-login-name{
     width: 94%;
     border-radius: 7px;
     border: none;
@@ -52,6 +52,19 @@
     border-radius: 7px;
     border: none;
     color: white;
+
+}
+.login-error{
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+.invalid-input {
+    border: 2px solid red;
+}
+.login-button-2:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
 
 }
 
