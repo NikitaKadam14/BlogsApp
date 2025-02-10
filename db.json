@@ -1,0 +1,156 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Hello World",
+      "createdBy": "kadamnik68@gmail.com",
+      "createdAt": "30 Jan, 2021",
+      "blogsDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "likes": 81,
+      "dislikes": 45
+    },
+    {
+      "id": "2",
+      "title": "Hello World1",
+      "createdBy": "kadamnik68@gmail.com1",
+      "createdAt": "31 Jan, 2021",
+      "blogsDescription": "I am new",
+      "likes": 6,
+      "dislikes": 6
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "5httjtgj",
+      "email": "tgjntjtjth",
+      "password": "tjhtjtj"
+    },
+    {
+      "id": "2",
+      "name": "Nikita kadam",
+      "email": "kadamnik68@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "3",
+      "name": "nikita kadam",
+      "email": "kadamnik68@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "4",
+      "name": "y4y4",
+      "email": "4t4t4",
+      "password": "t4t4"
+    },
+    {
+      "id": "5",
+      "name": "lp'l",
+      "email": "yhyy",
+      "password": "uuu"
+    },
+    {
+      "id": "6",
+      "name": "nikita kadam",
+      "email": "kadamnik68@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "7",
+      "name": "nikita kadam",
+      "email": "kadamnik68@gmsil.com",
+      "password": "12345677"
+    },
+    {
+      "id": "8",
+      "name": "grgrgr",
+      "email": "grgrgrgr",
+      "password": "greg"
+    },
+    {
+      "id": "9",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "10",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "11",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "12",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "13",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "14",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "5"
+    },
+    {
+      "id": "15",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "5"
+    },
+    {
+      "id": "16",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "5"
+    },
+    {
+      "id": "17",
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "5"
+    },
+    {
+      "id": 18,
+      "name": "nikita kadam",
+      "email": "kadamnik68@gmsil.com",
+      "password": "12345677"
+    },
+    {
+      "id": 19,
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": 20,
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "rtr"
+    },
+    {
+      "id": 21,
+      "name": "nikita kadam",
+      "email": "kadamnik68@gmsil.com",
+      "password": "12345677"
+    },
+    {
+      "id": 22,
+      "name": "nikita",
+      "email": "kadamnik68@gmail.com",
+      "password": "12345677"
+    }
+  ]
+}

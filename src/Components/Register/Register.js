@@ -1,7 +1,9 @@
 
 import { useNavigate } from "react-router-dom";
 import "./Register.css"
-import { useState } from "react";
+import {useEffect,useState} from "react";
+import axios from "axios";
+import _ from "lodash";
 function Register() {
     const [formData, setFormData] = useState({
         name: "",
@@ -14,38 +16,65 @@ function Register() {
         password: ""
 
     });
-    const navigate = useNavigate();
+    const[users,setUsers]=useState([]);
+     
+     useEffect(()=>{
+        axios.get("http://localhost:4000/users").then((Response)=> setUsers(Response.data))
+    },[]);
+
+      const navigate = useNavigate();
 
     const registerClick = () => {
         let errorMessage = { name: "", email: "", password: "" };
-        if (formData.name === "" && formData.email === "" && formData.password === "")
+        if (formData.name === "" && formData.email === "" && formData.password === ""){
             errorMessage = "Please enter valid fields";
-        else if (formData.name === "")
-            errorMessage.name = "Please enter a valid name"
-        else if (formData.email === "")
-            errorMessage.email = "Please enter a valid email";
-        else if (formData.password === "")
-            errorMessage.password = "Please enter a valid password";
-
-        setError(errorMessage);
-
-        if (!errorMessage.name && !errorMessage.email && !errorMessage.password) {
-            navigate("/login");
         }
-        console.log("Error :", errorMessage);
-        console.log("Register button clicked");
-        console.log("Form Data:", formData);
-        // navigate("/login")
+        else if (formData.name === ""){
+            errorMessage.name = "Please enter a valid name"
+        }
+        else if (formData.email === ""){
+            errorMessage.email = "Please enter a valid email";
+        }
+        else if (formData.password === ""){
+            errorMessage.password = "Please enter a valid password";
     }
-    const handleInputChange = (event) => {
+    else{
+        const newUserData={
+                ...formData,
+                id:users.length+1,
+            };
+            let existingUser={};
+            users.map((user)=>{
+                console.log('user:',user);
+                console.log('newUserData:',newUserData);
+                if(user.email===newUserData.email){
+                    existingUser=user;
+                }
+            })
+            console.log('existingUser:',existingUser);
+                if(_.isEmpty(existingUser)){
+                     axios.post("http://localhost:4000/users", newUserData)
+                .then(response => {
+                    console.log("User registered:", response.data);
+                    navigate("/login");
+                })
+                .catch((error) => {
+                    console.error("Error registering user:", error);
+                });
+
+                }else{
+                    errorMessage.email="user already exists!";
+                }
+            };
+            setError(errorMessage);
+        }
+const handleInputChange = (event) => {
         const { id, value } = event.target;
         setFormData((prevFormData) => ({
             ...prevFormData,
             [id]: value
         }));
     };
-
-
 const isFormValid = formData.name && formData.email && formData.password && !(error.name || error.email || error.password);
     return (
         <div>
@@ -71,6 +100,7 @@ const isFormValid = formData.name && formData.email && formData.password && !(er
                 </div>
                 <button onClick={registerClick} className="Res-button" disabled={!isFormValid}><ins>Register</ins></button>
             </div>
+            
         </div>
     );
 }

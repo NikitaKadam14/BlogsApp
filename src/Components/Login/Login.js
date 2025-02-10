@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Register from "../Register/Register";
 import "./Login.css"
 import Dashboard from "../Dashboard/Dashboard";
-import { useState } from "react";
+import {useEffect, useState } from "react";
+import axios from "axios";
+import _ from "lodash";
 function Login() {
     const [loginformData, setLoginFormData] = useState({
         email: "",
@@ -13,7 +15,14 @@ function Login() {
         email: "",
         password: "",
 
-    })
+    });
+    const[users,setUsers]=useState([]);
+     
+     useEffect(()=>{
+        axios.get("http://localhost:4000/users").then((Response)=> setUsers(Response.data))
+    },[]);
+
+
     const navigate = useNavigate();
     const loginClick0 = () => {
         let errorMessage = { email: "", password: "", general: "" };
@@ -27,12 +36,27 @@ function Login() {
             errorMessage.password = "Please enter a valid password";
         }
         else {
-            navigate("/blogslist")
+            let foundUser={}
+            users.map((user)=>{
+                console.log('user:',user);
+                console.log('loginformData:',loginformData);
+                if(user.email===loginformData.email){
+                    foundUser=user;
+                }
+            })
+            console.log('foundUser:',foundUser);
+            if(!_.isEmpty(foundUser)){
+                if(foundUser.password===loginformData.password){
+                    navigate("/blogsList");
+                }else{
+                    errorMessage.password="Incorrect password";
+                }
+            }
+            else{
+                errorMessage.email="User not found";
+            }
         }
         setError(errorMessage);
-        console.log("Login button clicked");
-        console.log("loginformData:", loginformData);
-        // navigate("/blogsList")
     }
     const handleEmailChange = (event) => {
         let loginData = { ...loginformData }

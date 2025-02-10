@@ -1,37 +1,39 @@
 
 import { useNavigate } from "react-router-dom";
 import "./BlogsList.css"
-import { useState } from "react";
+import { useEffect,useState } from "react";
+import axios from "axios";
 function BlogsList() {
-    const [blogs, setBlogs] = useState([{
-        title: "Hello World",
-        createdBy: "kadamnik68@gmail.com",
-        createdAt: "30 Jan, 2021",
-        blogsDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        likes: 0,
-        dislikes: 0,
-    },
-    {
-        title: "Hello World1",
-        createdBy: "kadamnik68@gmail.com1",
-        createdAt: "31 Jan, 2021",
-        blogsDescription: "I am new",
-        likes: 0,
-        dislikes: 0,
+    const [blogs, setBlogs] = useState([]);
 
-
-    }]);
+    useEffect(()=>{
+        axios.get("http://localhost:4000/posts").then((Response)=> setBlogs(Response.data))
+    },[]);
     function handlelikes(index) {
-        let tempBlogs = [...blogs];
-        tempBlogs[index].likes++;
-        setBlogs(tempBlogs)
+        axios.patch(`http://localhost:4000/posts/${blogs[index].id}`, {
+            likes: blogs[index].likes+1
+        })
+        .then(response => {
+            let  tempBlogs=[...blogs];
+            tempBlogs[index]=response.data
+            setBlogs(tempBlogs);
+        })
+        .catch(error => console.error('Error updating likes:', error));
+    
     }
     function handledislikes(index) {
-        let tempBlogs = [...blogs];
-        tempBlogs[index].dislikes++;
-        setBlogs(tempBlogs)
-        
+        axios.patch(`http://localhost:4000/posts/${blogs[index].id}`, {
+            dislikes: blogs[index].dislikes+1
+        })
+        .then(response => {
+            let tempBlogs = [...blogs];
+        tempBlogs[index]=response.data
+            setBlogs(tempBlogs);
+        })
+        .catch(error => console.error('Error updating dislikes:', error));
     }
+        
+    
     const navigate = useNavigate();
     const createnewbuttonClick = () => {
         navigate("/addAndEditBlogs")
