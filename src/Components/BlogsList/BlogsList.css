@@ -72,3 +72,28 @@
     margin-bottom: 10px;
 
 }
+.buttons-1{
+    display: flex;justify-content: space-between;
+    align-items: center;
+}
+.edit-button{
+    background-color:rgb(83, 81, 81);
+    color: white;
+    border: none;
+    padding:10px;
+    border-radius:7px;
+    margin-right:10px;
+}
+.delete-button{
+    background-color:red;
+    color: white;
+    border: none;
+    padding:10px;
+    border-radius:7px;
+    margin-right:10px;
+}
+.delete-button:disabled {
+    opacity: 0.5; 
+    cursor: not-allowed; 
+}
+

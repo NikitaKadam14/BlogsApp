@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Register from "../Register/Register";
 import "./Login.css"
 import Dashboard from "../Dashboard/Dashboard";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import _ from "lodash";
 function Login() {
@@ -16,11 +16,11 @@ function Login() {
         password: "",
 
     });
-    const[users,setUsers]=useState([]);
-     
-     useEffect(()=>{
-        axios.get("http://localhost:4000/users").then((Response)=> setUsers(Response.data))
-    },[]);
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:4000/users").then((Response) => setUsers(Response.data))
+    }, []);
 
 
     const navigate = useNavigate();
@@ -36,24 +36,25 @@ function Login() {
             errorMessage.password = "Please enter a valid password";
         }
         else {
-            let foundUser={}
-            users.map((user)=>{
-                console.log('user:',user);
-                console.log('loginformData:',loginformData);
-                if(user.email===loginformData.email){
-                    foundUser=user;
+            let foundUser = {}
+            users.map((user) => {
+                console.log('user:', user);
+                console.log('loginformData:', loginformData);
+                if (user.email === loginformData.email) {
+                    foundUser = user;
                 }
             })
-            console.log('foundUser:',foundUser);
-            if(!_.isEmpty(foundUser)){
-                if(foundUser.password===loginformData.password){
+            console.log('foundUser:', foundUser);
+            if (!_.isEmpty(foundUser)) {
+                if (foundUser.password === loginformData.password) {
+                    localStorage.setItem('email', foundUser.email);
                     navigate("/blogsList");
-                }else{
-                    errorMessage.password="Incorrect password";
+                } else {
+                    errorMessage.password = "Incorrect password";
                 }
             }
-            else{
-                errorMessage.email="User not found";
+            else {
+                errorMessage.email = "User not found";
             }
         }
         setError(errorMessage);
@@ -69,7 +70,7 @@ function Login() {
         setLoginFormData(loginData);
 
     }
-    const isFormValid=loginformData.email&&loginformData.password && !(error.email ||error.password); 
+    const isFormValid = loginformData.email && loginformData.password && !(error.email || error.password);
     return (
         <div>
             <div className="section2">
@@ -81,11 +82,11 @@ function Login() {
                     <div className="login-error">{error.email}</div>
                     <div className="login-error">{error.password}</div>
                     <label>Email id</label><br />
-                    <input  type="text"  className={`test ${error.email ? "invalid-input" :""}`} placeholder="test@gmail.com" id="email" value={loginformData.email} onChange={handleEmailChange} />
+                    <input type="text" className={`test ${error.email ? "invalid-input" : ""}`} placeholder="test@gmail.com" id="email" value={loginformData.email} onChange={handleEmailChange} />
                 </div>
                 <div className="mid">
                     <label>password</label><br />
-                    <input type="text" className={`test-login-name ${error.password ? "invalid-input" :""}`}   placeholder="test@123" id="password" value={loginformData.password} onChange={handlePasswordChange} />
+                    <input type="text" className={`test-login-name ${error.password ? "invalid-input" : ""}`} placeholder="test@123" id="password" value={loginformData.password} onChange={handlePasswordChange} />
                 </div>
                 <button onClick={loginClick0} className="login-button-2" disabled={!isFormValid}>Login</button>
             </div>

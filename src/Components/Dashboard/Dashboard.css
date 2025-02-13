@@ -21,7 +21,7 @@
 .buttons {
     display: flex;
     justify-content: right;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
@@ -41,6 +41,5 @@
     border-radius: 7px;
     border: none;
     padding: 10px;
-    
-}
 
+}

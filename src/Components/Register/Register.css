@@ -57,13 +57,8 @@
 }.invalid-input {
     border: 2px solid red;
 }
-/* Register.css */
 .Res-button:disabled {
     opacity: 0.5; 
     cursor: not-allowed; 
 }
-
-/* .valid-input {
-    border: 2px solid black;
-  } */
 
